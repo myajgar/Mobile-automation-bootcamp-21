@@ -39,16 +39,16 @@ public class TestBase {
      * @param platformVersion
      * @throws MalformedURLException
      */
-    @Parameters({"platform", "deviceName", "platformVersion"})
+    @Parameters({"platform", "deviceName", "platformVersion","appPackage","appActivity"})
     @BeforeMethod
-    public static void getAppiumDriver(String platform, String deviceName, String platformVersion) throws MalformedURLException {
+    public static void getAppiumDriver(String platform, String deviceName, String platformVersion,String appPackage,String appActivity ) throws MalformedURLException {
         DesiredCapabilities cap = new DesiredCapabilities();
         if (platform.equalsIgnoreCase("android")) {
             cap.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
             cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "android");
             cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, platformVersion);
-            cap.setCapability(MobileCapabilityType.APP_PACKAGE, "com.tdbank");
-            cap.setCapability(MobileCapabilityType.APP_ACTIVITY, "com.td.dcts.android.us.app.SplashScreenActivity");
+            cap.setCapability(MobileCapabilityType.APP_PACKAGE, appPackage);
+            cap.setCapability(MobileCapabilityType.APP_ACTIVITY, appActivity);
             driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), cap);
         } else {
             //code for ios
