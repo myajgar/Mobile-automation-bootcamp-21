@@ -39,9 +39,9 @@ public class TestBase {
      * @param platformVersion
      * @throws MalformedURLException
      */
-    @Parameters({"platform", "deviceName", "platformVersion","appPackage","appActivity"})
+    @Parameters({"platform", "deviceName", "platformVersion", "appPackage", "appActivity"})
     @BeforeMethod
-    public static void getAppiumDriver(String platform, String deviceName, String platformVersion,String appPackage,String appActivity ) throws MalformedURLException {
+    public static void getAppiumDriver(String platform, String deviceName, String platformVersion, String appPackage, String appActivity) throws MalformedURLException {
         DesiredCapabilities cap = new DesiredCapabilities();
         if (platform.equalsIgnoreCase("android")) {
             cap.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
@@ -119,7 +119,7 @@ public class TestBase {
     @BeforeSuite
     public void extentSetup(ITestContext context) {
         ExtentManager.setOutputDirectory(context);
-       extent = ExtentManager.getInstance();
+        extent = ExtentManager.getInstance();
     }
 
     @BeforeMethod
@@ -141,15 +141,15 @@ public class TestBase {
         ExtentTestManager.getTest().getTest().setStartedTime(getTime(result.getStartMillis()));
         ExtentTestManager.getTest().getTest().setEndedTime(getTime(result.getEndMillis()));
         for (String group : result.getMethod().getGroups()) {
-           ExtentTestManager.getTest().assignCategory(group);
+            ExtentTestManager.getTest().assignCategory(group);
         }
 
         if (result.getStatus() == 1) {
-           ExtentTestManager.getTest().log(LogStatus.PASS, "Test Passed");
+            ExtentTestManager.getTest().log(LogStatus.PASS, "Test Passed");
         } else if (result.getStatus() == 2) {
             ExtentTestManager.getTest().log(LogStatus.FAIL, getStackTrace(result.getThrowable()));
         } else if (result.getStatus() == 3) {
-           ExtentTestManager.getTest().log(LogStatus.SKIP, "Test Skipped");
+            ExtentTestManager.getTest().log(LogStatus.SKIP, "Test Skipped");
         }
 
         ExtentTestManager.endTest();

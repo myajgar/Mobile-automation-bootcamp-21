@@ -4,12 +4,12 @@
 <suite name="Selenium Test Suite" parallel="false">
 
     <parameter name="platform" value="android"/>
-    <parameter name="deviceName" value="R3CR40LQDRX"/>
-    <parameter name="platformVersion" value="21"/>
+    <parameter name="deviceName" value="5554"/>
+    <parameter name="platformVersion" value="11"/>
 
     <test name="Automation tests">
         <classes>
-            <class name="com.td.tests.HomePageValidation"/>
+            <class name="com.espn.tests.LoginTest"/>
 
         </classes>
     </test>

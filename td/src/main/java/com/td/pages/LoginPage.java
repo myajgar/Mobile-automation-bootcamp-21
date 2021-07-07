@@ -1,4 +1,5 @@
 package com.td.pages;
+
 import com.core.report.ExtentTestManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
@@ -10,7 +11,7 @@ public class LoginPage {
     @FindBy(xpath = "//android.widget.ImageButton[@content-desc=Go Back]")
     private WebElement backBtn;
 
-    public void cliuckOnBackButton() {
+    public void clickOnBackButton() {
         backBtn.click();
         ExtentTestManager.log("Back button clicked", LOGGER);
 

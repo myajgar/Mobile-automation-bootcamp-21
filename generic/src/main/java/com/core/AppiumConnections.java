@@ -16,7 +16,7 @@ public class AppiumConnections {
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability(MobileCapabilityType.DEVICE_NAME, "R5CNA00LEQX");
         cap.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
-        cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
+        cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, "21");
         cap.setCapability(MobileCapabilityType.APP_PACKAGE, "com.tdbank");
         cap.setCapability(MobileCapabilityType.APP_ACTIVITY, "com.td.dcts.android.us.app.SplashScreenActivity");
 
@@ -29,7 +29,7 @@ public class AppiumConnections {
         Thread.sleep(2000);
 
 
-}
+    }
 
 
 }
